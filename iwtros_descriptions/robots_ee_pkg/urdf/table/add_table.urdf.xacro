@@ -1,0 +1,51 @@
+<?xml version='1.0'?>
+<robot  xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+        xmlns:xacro="http://www.ros.org/wiki/xacro"
+        name="add_table">
+  
+  <xacro:property name="PI" value="3.1415926535897931"/>
+
+  <xacro:macro name="add_table" params="table_link parent *origin">
+
+    <joint name="world_${table_link}_table_joint" type="fixed">
+      <xacro:insert_block name="origin"/>
+      <parent link="${parent}"/>
+      <child link="${table_link}"/>
+    </joint>
+
+     <!-- BASE LINK -->
+    <link name="${table_link}">
+      <inertial>
+        <mass value="80"/>
+          <origin xyz="0 0 -${0.6}" rpy="${PI/2} 0 -${PI/2}"/>
+            <inertia  ixx="${80/12*(0.698*0.698+0.997*0.997)}" ixy="0.0"  ixz="0.0"  iyy="${80/12*(0.685*0.685+0.997*0.997)}"  iyz="0.0"  izz="${80/12*(0.698*0.698+0.685*0.685)}" />
+      </inertial>
+
+     <visual>
+        <origin xyz="0 0 -${0.6}" rpy="${PI/2} 0 -${PI/2}"/>
+        <geometry>
+          <mesh filename="package://robots_ee_pkg/meshes/lf044_rough.dae" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="grey">
+          <color rgba="0.5 0.5 0.5 1"/>
+        </material>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 -${0.6}" rpy="${PI/2} 0 -${PI/2}"/>
+          <geometry>
+            <mesh filename="package://robots_ee_pkg/meshes/lf044_rough.stl" scale="0.001 0.001 0.001"/>
+          </geometry>
+      </collision>
+    </link>
+    <gazebo reference="${table_link}">
+      <material>Gazebo/Grey</material>
+      <gravity>true</gravity>
+      <selfCollide>false</selfCollide>
+      <mu1>0.3</mu1>
+      <mu2>0.3</mu2>
+    </gazebo>
+  </xacro:macro>
+</robot>
