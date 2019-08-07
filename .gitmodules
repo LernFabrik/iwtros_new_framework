@@ -1,0 +1,8 @@
+[submodule "franka_ros"]
+	url = https://github.com/iwt-vsp/franka_ros.git
+[submodule "ira_laser_tools"]
+	url = https://github.com/iwt-vsp/ira_laser_tools.git
+[submodule "universal_robot"]
+	url = https://github.com/iwt-vsp/universal_robot.git
+[submodule "moveit_tutorials"]
+	url = https://github.com/ros-planning/moveit_tutorials.git
