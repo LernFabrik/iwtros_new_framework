@@ -9,3 +9,6 @@
 [submodule "iiwa_stack"]
 	path = iiwa_stack
 	url = https://github.com/iwt-vsp/iiwa_stack.git
+[submodule "pilz_industrial_motion"]
+	path = pilz_industrial_motion
+	url = https://github.com/PilzDE/pilz_industrial_motion.git
