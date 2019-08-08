@@ -6,3 +6,6 @@
 	url = https://github.com/iwt-vsp/universal_robot.git
 [submodule "moveit_tutorials"]
 	url = https://github.com/ros-planning/moveit_tutorials.git
+[submodule "iiwa_stack"]
+	path = iiwa_stack
+	url = https://github.com/iwt-vsp/iiwa_stack.git
