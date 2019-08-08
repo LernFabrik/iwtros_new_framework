@@ -19,12 +19,11 @@
     <link name="${table_link}">
       <inertial>
         <mass value="80"/>
-          <origin xyz="0 0 -${0.6}" rpy="${PI/2} 0 -${PI/2}"/>
+          <origin xyz="0 0 -${0.53}" rpy="${PI/2} 0 -${PI/2}"/>
             <inertia  ixx="${80/12*(0.698*0.698+0.997*0.997)}" ixy="0.0"  ixz="0.0"  iyy="${80/12*(0.685*0.685+0.997*0.997)}"  iyz="0.0"  izz="${80/12*(0.698*0.698+0.685*0.685)}" />
       </inertial>
-
      <visual>
-        <origin xyz="0 0 -${0.6}" rpy="${PI/2} 0 -${PI/2}"/>
+        <origin xyz="0 0 -${0.53}" rpy="${PI/2} 0 -${PI/2}"/>
         <geometry>
           <mesh filename="package://robots_ee_pkg/meshes/lf044_rough.dae" scale="0.001 0.001 0.001"/>
         </geometry>
@@ -32,9 +31,8 @@
           <color rgba="0.5 0.5 0.5 1"/>
         </material>
       </visual>
-
       <collision>
-        <origin xyz="0 0 -${0.6}" rpy="${PI/2} 0 -${PI/2}"/>
+        <origin xyz="0 0 -${0.53}" rpy="${PI/2} 0 -${PI/2}"/>
           <geometry>
             <mesh filename="package://robots_ee_pkg/meshes/lf044_rough.stl" scale="0.001 0.001 0.001"/>
           </geometry>
@@ -42,6 +40,40 @@
     </link>
     <gazebo reference="${table_link}">
       <material>Gazebo/Grey</material>
+      <gravity>true</gravity>
+      <selfCollide>false</selfCollide>
+      <mu1>0.3</mu1>
+      <mu2>0.3</mu2>
+    </gazebo>
+
+    <joint name="table_ee_joint" type="fixed">
+      <origin xyz="0 0 -0.015" rpy="0 0 0" />
+      <parent link="${table_link}"/>
+      <child link="table_ee"/>
+    </joint>
+
+    <link name="table_ee">
+      <visual>
+        <geometry>
+          <box size="0.2 0.2 0.03"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <material name="white"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.2 0.2 0.2"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="1" />
+        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+      </inertial>
+    </link>
+    <gazebo reference="table_ee">
+      <material>Gazebo/Black</material>
       <gravity>true</gravity>
       <selfCollide>false</selfCollide>
       <mu1>0.3</mu1>
