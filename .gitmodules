@@ -12,3 +12,6 @@
 [submodule "pilz_industrial_motion"]
 	path = pilz_industrial_motion
 	url = https://github.com/PilzDE/pilz_industrial_motion.git
+[submodule "iwtros_control"]
+	path = iwtros_control
+	url = git@bitbucket.org:iwt_lernfabrik/iwtros_control.git
