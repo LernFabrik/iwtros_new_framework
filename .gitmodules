@@ -15,3 +15,6 @@
 [submodule "iwtros_control"]
 	path = iwtros_control
 	url = git@bitbucket.org:iwt_lernfabrik/iwtros_control.git
+[submodule "iwtros_robots"]
+	path = iwtros_robots
+	url = git remote add origin git@bitbucket.org:iwt_lernfabrik/iwtros_robots.git
