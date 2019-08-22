@@ -1,0 +1,105 @@
+[ERROR] [1566398666.640236309, 2113.972000000]: Planning pipeline threw an exception (error code: -17): Could not solve request
+---
+workspace_parameters: 
+  header: 
+    seq: 0
+    stamp: 0.000000000
+    frame_id: 
+  min_corner: 
+    x: 0
+    y: 0
+    z: 0
+  max_corner: 
+    x: 0
+    y: 0
+    z: 0
+start_state: 
+  joint_state: 
+    header: 
+      seq: 0
+      stamp: 0.000000000
+      frame_id: 
+    name[]
+    position[]
+    velocity[]
+    effort[]
+  multi_dof_joint_state: 
+    header: 
+      seq: 0
+      stamp: 0.000000000
+      frame_id: 
+    joint_names[]
+    transforms[]
+    twist[]
+    wrench[]
+  attached_collision_objects[]
+  is_diff: 1
+goal_constraints[]
+  goal_constraints[0]: 
+    name: 
+    joint_constraints[]
+    position_constraints[]
+      position_constraints[0]: 
+            header: 
+          seq: 0
+          stamp: 0.000000000
+          frame_id: /iiwa_interface
+        link_name: iiwa_link_ee
+        target_point_offset: 
+          x: 0
+          y: 0
+          z: 0
+        constraint_region: 
+          primitives[]
+            primitives[0]: 
+                        type: 2
+              dimensions[]
+                dimensions[0]: 0.002
+          primitive_poses[]
+            primitive_poses[0]: 
+                        position: 
+                x: 0.66
+                y: 0.25
+                z: 0.3
+              orientation: 
+                x: 0.92388
+                y: 0.382683
+                z: 5.65713e-17
+                w: 2.34326e-17
+          meshes[]
+          mesh_poses[]
+        weight: 1
+    orientation_constraints[]
+      orientation_constraints[0]: 
+            header: 
+          seq: 0
+          stamp: 0.000000000
+          frame_id: /iiwa_interface
+        orientation: 
+          x: 0.92388
+          y: 0.382683
+          z: 5.65713e-17
+          w: 2.34326e-17
+        link_name: iiwa_link_ee
+        absolute_x_axis_tolerance: 1e-05
+        absolute_y_axis_tolerance: 1e-05
+        absolute_z_axis_tolerance: 1e-05
+        weight: 1
+    visibility_constraints[]
+path_constraints: 
+  name: 
+  joint_constraints[]
+  position_constraints[]
+  orientation_constraints[]
+  visibility_constraints[]
+trajectory_constraints: 
+  constraints[]
+planner_id: PTP
+group_name: iiwa_arm
+num_planning_attempts: 0
+allowed_planning_time: 1
+max_velocity_scaling_factor: 0.2
+max_acceleration_scaling_factor: 0.2
+
+---
+
