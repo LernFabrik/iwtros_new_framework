@@ -1,14 +1,14 @@
 [submodule "franka_ros"]
-	url = https://github.com/iwt-vsp/franka_ros.git
+	url = https://github.com/lernfabrik/franka_ros.git
 [submodule "ira_laser_tools"]
-	url = https://github.com/iwt-vsp/ira_laser_tools.git
+	url = https://github.com/lernfabrik/ira_laser_tools.git
 [submodule "universal_robot"]
-	url = https://github.com/iwt-vsp/universal_robot.git
+	url = https://github.com/lernfabrik/universal_robot.git
 [submodule "moveit_tutorials"]
 	url = https://github.com/ros-planning/moveit_tutorials.git
 [submodule "iiwa_stack"]
 	path = iiwa_stack
-	url = https://github.com/iwt-vsp/iiwa_stack.git
+	url = https://github.com/lernfabrik/iiwa_stack.git
 [submodule "pilz_industrial_motion"]
 	path = pilz_industrial_motion
 	url = https://github.com/PilzDE/pilz_industrial_motion.git
