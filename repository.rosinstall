@@ -2,27 +2,3 @@
     local-name: iwtros_control
     uri:  git@bitbucket.org:iwt_lernfabrik/iwtros_control.git
     version: master
-- git:
-    local-name: iwtros_robots
-    uri:  git@bitbucket.org:iwt_lernfabrik/iwtros_robots.git
-    version: master
-- git:
-    local-name: franka_ros
-    uri: https://github.com/lernfabrik/franka_ros.git
-    version: kinetic-devel
-- git:
-    local-name: iiwa_stack
-    uri:  https://github.com/lernfabrik/iiwa_stack.git
-    version: master
-- git:
-    local-name: moveit_tutorials
-    uri:  https://github.com/ros-planning/moveit_tutorials.git
-    version: kinetic-devel
-- git:
-    local-name: pilz_industrial_motion
-    uri:  https://github.com/PilzDE/pilz_industrial_motion.git
-    version: kinetic-devel
-- git:
-    local-name: universal_robot
-    uri:  https://github.com/lernfabrik/universal_robot.git
-    version: kinetic-devel
