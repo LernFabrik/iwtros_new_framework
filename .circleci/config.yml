@@ -1,0 +1,44 @@
+version: 2
+jobs:
+  build:
+    working_directory: /root/catkin_ws
+    docker:
+      - image: osrf/ros:kinetic-desktop-full
+        environment:
+          toolset_branch: master
+          server_type: circle
+          ros_release_name: kinetic
+          ubuntu_version_name: xenial
+          used_modules: check_cache,check_build,code_style_check,check_install,code_coverage
+
+    steps:
+      - checkout:
+          path: /root/catkin_ws/src
+      - add_ssh_keys:
+          fingerprints: 84:3c:0b:bd:93:be:11:fc:2a:0c:aa:07:a9:f8:f7:bf
+
+      #install dependencies
+      - run: apt-get update
+      - run: apt-get install -y apt-utils lsb-release git openssh-client wget python-wstool
+      - run: apt-get install -y libboost-all-dev libpcl-dev ssh python-rosinstall
+      - run: mkdir ~/.ssh  && touch ~/.ssh/known_hosts && chmod +rwx ~/.ssh/known_hosts
+      - run: ssh-keyscan -t rsa bitbucket.org > ~/.ssh/known_hosts
+      - run: cd /root/catkin_ws/src && ls
+      - run: cd /root/catkin_ws/src && wstool init . && wstool merge /root/catkin_ws/src/lernfabrik_ros_framework/repository.rosinstall && wstool up --delete-changed-uris && ls
+
+      # install catkin
+      - run: sh -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros-latest.list'
+      - run: wget http://packages.ros.org/ros.key -O - | apt-key add -
+      - run: apt-get update && apt-get install -y python-catkin-tools
+
+      #build
+      - run: source /opt/ros/kinetic/setup.bash 
+      - run: catkin init 
+      - run: rosdep install --ignore-src --from-path src -y -r
+      - run: source /opt/ros/kinetic/setup.bash && catkin build 
+
+      - store_test_results:
+          path: test_results
+
+      - store_artifacts:
+          path: code_coverage_results
