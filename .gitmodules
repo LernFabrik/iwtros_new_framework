@@ -1,9 +1,6 @@
 [submodule "franka_ros"]
 	path = franka_ros
 	url = https://github.com/lernfabrik/franka_ros.git
-[submodule "ira_laser_tools"]
-	path = ira_laser_tools
-	url = https://github.com/lernfabrik/ira_laser_tools.git
 [submodule "universal_robot"]
 	path = universal_robot
 	url = https://github.com/lernfabrik/universal_robot.git

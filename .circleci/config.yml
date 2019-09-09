@@ -15,7 +15,7 @@ jobs:
       - checkout:
           path: /root/catkin_ws/src
       - add_ssh_keys:
-          fingerprints: 84:3c:0b:bd:93:be:11:fc:2a:0c:aa:07:a9:f8:f7:bf
+          fingerprints: 2b:a9:cb:27:a7:20:f2:5a:21:f7:af:b1:52:80:b6:c4
 
       #install dependencies
       - run: apt-get update
@@ -24,7 +24,7 @@ jobs:
       - run: mkdir ~/.ssh  && touch ~/.ssh/known_hosts && chmod +rwx ~/.ssh/known_hosts
       - run: ssh-keyscan -t rsa bitbucket.org > ~/.ssh/known_hosts
       - run: cd /root/catkin_ws/src && ls
-      - run: cd /root/catkin_ws/src && wstool init . && wstool merge /root/catkin_ws/src/lernfabrik_ros_framework/repository.rosinstall && wstool up --delete-changed-uris && ls
+      - run: cd /root/catkin_ws/src && wstool init . && wstool merge /root/catkin_ws/src/repository.rosinstall && wstool up --delete-changed-uris && ls
 
       # install catkin
       - run: sh -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros-latest.list'
