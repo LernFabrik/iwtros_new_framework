@@ -10,7 +10,11 @@ jobs:
           ros_release_name: kinetic
           ubuntu_version_name: xenial
           used_modules: check_cache,check_build,code_style_check,check_install,code_coverage
-
+          
+    branches:
+      only:
+        - master
+        
     steps:
       - checkout:
           path: /root/catkin_ws/src
