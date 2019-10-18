@@ -19,7 +19,7 @@ jobs:
       - checkout:
           path: /root/catkin_ws/src
       - add_ssh_keys:
-          fingerprints: 2b:a9:cb:27:a7:20:f2:5a:21:f7:af:b1:52:80:b6:c4
+          fingerprints: c8:98:ea:ff:70:75:6d:06:18:67:7c:22:f4:62:ca:f8
 
       #install dependencies
       - run: apt-get update
