@@ -7,9 +7,6 @@
 [submodule "moveit_tutorials"]
 	path = moveit_tutorials
 	url = https://github.com/ros-planning/moveit_tutorials.git
-[submodule "iiwa_stack"]
-	path = iiwa_stack
-	url = https://github.com/lernfabrik/iiwa_stack.git
 [submodule "pilz_industrial_motion"]
 	path = pilz_industrial_motion
 	url = https://github.com/PilzDE/pilz_industrial_motion.git
@@ -19,3 +16,6 @@
 [submodule "iwtros_robots"]
 	path = iwtros_robots
 	url = git@bitbucket.org:iwt_lernfabrik/iwtros_robots.git
+[submodule "iiwa_ros"]
+	path = iiwa_ros
+	url = https://github.com/lernfabrik/iiwa_ros.git
