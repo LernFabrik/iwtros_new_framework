@@ -3,12 +3,12 @@ jobs:
   build:
     working_directory: /root/catkin_ws
     docker:
-      - image: osrf/ros:kinetic-desktop-full
+      - image: osrf/ros:melodic-desktop-full
         environment:
           toolset_branch: master
           server_type: circle
-          ros_release_name: kinetic
-          ubuntu_version_name: xenial
+          ros_release_name: melodic
+          ubuntu_version_name: bionic
           used_modules: check_cache,check_build,code_style_check,check_install,code_coverage
           
     branches:
