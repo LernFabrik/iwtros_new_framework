@@ -36,10 +36,10 @@ jobs:
       - run: apt-get update && apt-get install -y python-catkin-tools
 
       #build
-      - run: source /opt/ros/kinetic/setup.bash 
+      - run: source /opt/ros/melodic/setup.bash 
       - run: catkin init 
       - run: rosdep install --ignore-src --from-path src -y -r
-      - run: source /opt/ros/kinetic/setup.bash && catkin build 
+      - run: source /opt/ros/melodic/setup.bash && catkin build 
 
       - store_test_results:
           path: test_results
