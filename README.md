@@ -10,6 +10,8 @@
 ### For kinetic new branch called kinetic-dev
 # !TODO LIST! 
 1. [GIo: iiwa7 is not spawning properly in gazebo 9](https://app.gitkraken.com/glo/board/XKy6W4x6OgARyonM/card/XbLLQTz-owAP0sJB)
+2. Goal tolerance for "PositionJointTrajectoryControl" in iiwa_control/config/iiwa_control.ymal
+3. Re-develop the tcp driver for gripper.
 
 # Error List
 1. [Koni Port is not stable enough](https://app.gitkraken.com/glo/board/XKy6W4x6OgARyonM/card/XbLLQTz-owAP0sJB)

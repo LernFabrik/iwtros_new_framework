@@ -19,3 +19,6 @@
 [submodule "iiwa_ros"]
 	path = iiwa_ros
 	url = https://github.com/lernfabrik/iiwa_ros.git
+[submodule "nimbus-ros"]
+	path = nimbus-ros
+	url = https://github.com/pieye/nimbus-ros.git
